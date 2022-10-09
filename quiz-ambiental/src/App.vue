@@ -81,12 +81,12 @@ const NextQuestion = () => {
 
 <template>
 	<main class="app">
-		<h1>The Quiz</h1>
+		<h1>Cultura ambiental: Basura</h1>
 		
 		<section class="quiz" v-if="!quizCompleted">
 			<div class="quiz-info">
 				<span class="question">{{ getCurrentQuestion.question }}</span>
-				<span class="score">Score {{ score }}/{{ questions.length }}</span>
+				<span class="score">Puntos {{ score }}/{{ questions.length }}</span>
 			</div>
 			
 			<div class="options">
@@ -132,8 +132,8 @@ const NextQuestion = () => {
 		</section>
 
 		<section v-else>
-			<h2>You have finished the quiz!</h2>
-			<p>Your score is {{ score }}/{{ questions.length }}</p>
+			<h2>¡Terminó la trivia!</h2>
+			<p>Tu puntaje: {{ score }}/{{ questions.length }}</p>
 		</section>
 	</main>
 </template>
@@ -149,7 +149,7 @@ const NextQuestion = () => {
 body {
 	background-image: url('./assets/contam.gif'); 
     background-repeat: repeat;
-	color: #FFF;
+	color: #fff;
 }
 
 .app {
@@ -163,10 +163,11 @@ body {
 h1 {
 	font-size: 2rem;
 	margin-bottom: 2rem;
+	color: #093642;
 }
 
 .quiz {
-	background-color: #382a4b;
+	background-color: #e4ccb2;
 	padding: 1rem;
 	width: 100%;
 	max-width: 640px;
@@ -195,14 +196,14 @@ h1 {
 .option {
 	padding: 1rem;
 	display: block;
-	background-color: #271c36;
+	background-color: #15422d;
 	margin-bottom: 0.5rem;
 	border-radius: 0.5rem;
 	cursor: pointer;
 }
 
 .option:hover {
-	background-color: #2d213f;
+	background-color: #3c6e51;
 }
 
 .option.correct {
@@ -231,8 +232,8 @@ button {
 	border: none;
 	cursor: pointer;
 	padding: 0.5rem 1rem;
-	background-color: #2cce7d;
-	color: #2d213f;
+	background-color: #013c28;
+	color: #000000;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 1.2rem;
@@ -247,10 +248,11 @@ h2 {
 	font-size: 2rem;
 	margin-bottom: 2rem;
 	text-align: center;
+	color: #03271b;
 }
 
 p {
-	color: #8F8F8F;
+	color: #000000;
 	font-size: 1.5rem;
 	text-align: center;
 }
