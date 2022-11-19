@@ -1,46 +1,40 @@
 <script setup>
 import { ref, computed } from 'vue'
-import imgUrl from './assets/canvas2.png'
+import imgUrl from './assets/canvas3.png'
 
 const questions = ref([
   {
-	question: '¿Dónde lo encontramos en Bolivia?',
+	question: '¿Debido a qué factores, Cochabamba es una de las ciudades con mayor contaminación atmosférica?',
 	answer: 3,
 	options: [
-		'Cochabamba, Chuquisaca, Tarija, Potosí',
-		'La Paz, Potosí',
-		'Chuquisaca, Potosí, Tarija',
-		'Chuquisaca, La Paz, Cochabamba, Potosí, Tarija'
+		'Aumento de autos en la ciudad',
+		'Su geografía',
+		'Industria',
+		'Todas las anteriores'
 	],
 	selected: null
   },
   {
-	question: '¿Cuál es su importancia en nuestro ecosistema urbano?',
-	answer: 2,
+	question: '¿Cómo nos afecta la contaminación atmosférica?',
+	answer: 3,
 	options: [
-		'Es una señal de que nuestros ancestros nos envían un mensaje',
-		'Mejora el paisaje urbano',
-		'Aporta a la polinización de semillas y con esto la protección del ecosistema urbano'
+		'Problemas de salud',
+		'Pérdida de biodiversidad urbana',
+		'Mayor vulnerabilidad al cambio climático',
+		'Todas las anteriores',
+		'Ninguna de las anteriores'
 	],
 	selected: null
   },
   {
-	question: '¿Por qué están desapareciendo estos hermosos seres?',
-	answer: 1,
+	question: '¿Qué podemos hacer?',
+	answer: 3,
 	options: [
-		'Se comen basura',
-		'El ruido, la contaminación atmosférica y les es difícil cada vez más conseguir alimento',
-		'Los gatos que se comen a los colibríes'
-	],
-	selected: null
-  },
-  {
-	question: '¿Qué podemos hacer para preservar su existencia?',
-	answer: 1,
-	options: [
-		'Alejar depredadores',
-		'Sembrar lavanda, kewiña, pacay, salvias, churquis, budjileia, lantana cámara',
-		'Aislar el sonido de nuestras casas'
+		'Sembrar y cuidar más árboles ',
+		'Usar la bicicleta como medio de transporte',
+		'Mayor control social a las industrias',
+		'Todas las anteriores',
+		'Ninguna de las anteriores'
 	],
 	selected: null
   }
@@ -56,7 +50,7 @@ const score = computed(() => {
 			value++
 		}
 	})
-  if (value==4){
+  if (value==3){
     localStorage.setItem("completed", 1);
     const body = document.querySelector('body')
     body.style.backgroundImage = `url('${imgUrl}')`;
@@ -92,7 +86,7 @@ const NextQuestion = () => {
 
 <template>
 	<main class="app">
-		<h1>Cultura ambiental: Colibrí</h1>
+		<h1>Cultura ambiental: Calidad del aire</h1>
 		
 		<section class="quiz" v-if="!quizCompleted">
 			<div class="quiz-info">
