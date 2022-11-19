@@ -1,40 +1,28 @@
 <script setup>
 import { ref, computed } from 'vue'
-import imgUrl from './assets/canvas3.png'
+import imgUrl from './assets/canvas4.png'
 
 const questions = ref([
   {
-	question: '¿Debido a qué factores, Cochabamba es una de las ciudades con mayor contaminación atmosférica?',
-	answer: 3,
+	question: '¿Cuáles son los beneficios de los huertos urbanos? ',
+	answer: 4,
 	options: [
-		'Aumento de autos en la ciudad',
-		'Su geografía',
-		'Industria',
+		'Ayuda como medida de adaptación al cambio climático',
+		'Nos hace conscientes sobre nuestra alimentación',
+		'Mejora nuestras relaciones entre las personas que cuidan el huerto',
+		'Nos hace más empaticos con las personas que producen estos alimentos en el área rural',
 		'Todas las anteriores'
 	],
 	selected: null
   },
   {
-	question: '¿Cómo nos afecta la contaminación atmosférica?',
+	question: 'Mitos sobre los huertos urbanos:',
 	answer: 3,
 	options: [
-		'Problemas de salud',
-		'Pérdida de biodiversidad urbana',
-		'Mayor vulnerabilidad al cambio climático',
-		'Todas las anteriores',
-		'Ninguna de las anteriores'
-	],
-	selected: null
-  },
-  {
-	question: '¿Qué podemos hacer?',
-	answer: 3,
-	options: [
-		'Sembrar y cuidar más árboles ',
-		'Usar la bicicleta como medio de transporte',
-		'Mayor control social a las industrias',
-		'Todas las anteriores',
-		'Ninguna de las anteriores'
+		'Se necesita espacio (terreno)',
+		'Dejamos sin ingresos a los productores rurales',
+		'Es una tarea solo para mujeres ',
+		'Todas las anteriores'
 	],
 	selected: null
   }
@@ -50,7 +38,7 @@ const score = computed(() => {
 			value++
 		}
 	})
-  if (value==3){
+  if (value==2){
     localStorage.setItem("completed", 1);
     const body = document.querySelector('body')
     body.style.backgroundImage = `url('${imgUrl}')`;
@@ -86,7 +74,7 @@ const NextQuestion = () => {
 
 <template>
 	<main class="app">
-		<h1>Cultura ambiental: Calidad del aire</h1>
+		<h1>Cultura ambiental: Huertos</h1>
 		
 		<section class="quiz" v-if="!quizCompleted">
 			<div class="quiz-info">
