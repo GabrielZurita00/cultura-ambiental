@@ -17,9 +17,9 @@ const questions = ref([
 	question: '¿Cómo se separan los residuos domésticos en Bolivia?',
 	answer: 2,
 	options: [
-		'Orgánicos, reciclables, no aprovechables',
 		'Orgánicos e inorgánicos',
-		'Papel, plástico, orgánicos, metales y basura'
+		'Papel, plástico, orgánicos, metales y basura',
+		'Orgánicos, reciclables, no aprovechables'
 	],
 	selected: null
   },
@@ -123,10 +123,10 @@ const NextQuestion = () => {
 				:disabled="!getCurrentQuestion.selected">
 				{{ 
 					getCurrentQuestion.index == questions.length - 1 
-						? 'Finish' 
+						? 'Fin' 
 						: getCurrentQuestion.selected == null
-							? 'Select an option'
-							: 'Next question'
+							? 'Selecciona una opción'
+							: 'Siguiente pregunta'
 				}}
 			</button>
 		</section>
