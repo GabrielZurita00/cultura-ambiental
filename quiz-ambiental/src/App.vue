@@ -1,35 +1,46 @@
 <script setup>
 import { ref, computed } from 'vue'
-import imgUrl from './assets/canvas.png'
+import imgUrl from './assets/canvas2.png'
 
 const questions = ref([
   {
-	question: '¿Qué tipo de residuos se generan más en la ciudad de Cochabamba?',
-	answer: 0,
+	question: '¿Dónde lo encontramos en Bolivia?',
+	answer: 3,
 	options: [
-		'Residuos orgánicos',
-		'Plásticos',
-		'Metales'
+		'Cochabamba, Chuquisaca, Tarija, Potosí',
+		'La Paz, Potosí',
+		'Chuquisaca, Potosí, Tarija',
+		'Chuquisaca, La Paz, Cochabamba, Potosí, Tarija'
 	],
 	selected: null
   },
   {
-	question: '¿Cómo se separan los residuos domésticos en Bolivia?',
+	question: '¿Cuál es su importancia en nuestro ecosistema urbano?',
 	answer: 2,
 	options: [
-		'Orgánicos e inorgánicos',
-		'Papel, plástico, orgánicos, metales y basura',
-		'Orgánicos, reciclables, no aprovechables'
+		'Es una señal de que nuestros ancestros nos envían un mensaje',
+		'Mejora el paisaje urbano',
+		'Aporta a la polinización de semillas y con esto la protección del ecosistema urbano'
 	],
 	selected: null
   },
   {
-	question: '¿Cuál es la diferencia entre reciclaje y reuso?',
+	question: '¿Por qué están desapareciendo estos hermosos seres?',
 	answer: 1,
 	options: [
-		'Es lo mismo',
-		'Reuso: Volver a usar un objeto con el mismo fin o uno diferente\nReciclar: Proceso físico-químico por el que pasa un producto para su posterior uso',
-		'Reuso es rechazar algo, reciclar es separar los residuos'
+		'Se comen basura',
+		'El ruido, la contaminación atmosférica y les es difícil cada vez más conseguir alimento',
+		'Los gatos que se comen a los colibríes'
+	],
+	selected: null
+  },
+  {
+	question: '¿Qué podemos hacer para preservar su existencia?',
+	answer: 1,
+	options: [
+		'Alejar depredadores',
+		'Sembrar lavanda, kewiña, pacay, salvias, churquis, budjileia, lantana cámara',
+		'Aislar el sonido de nuestras casas'
 	],
 	selected: null
   }
@@ -45,7 +56,7 @@ const score = computed(() => {
 			value++
 		}
 	})
-  if (value==3){
+  if (value==4){
     localStorage.setItem("completed", 1);
     const body = document.querySelector('body')
     body.style.backgroundImage = `url('${imgUrl}')`;
@@ -81,7 +92,7 @@ const NextQuestion = () => {
 
 <template>
 	<main class="app">
-		<h1>Cultura ambiental: Basura</h1>
+		<h1>Cultura ambiental: Colibrí</h1>
 		
 		<section class="quiz" v-if="!quizCompleted">
 			<div class="quiz-info">
