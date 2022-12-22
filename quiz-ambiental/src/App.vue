@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import imgUrl from './assets/canvas.png'
+import imgUrl from './assets/TRIVIA_2-01.png'
 
 const questions = ref([
   {
@@ -34,7 +34,7 @@ const questions = ref([
 	selected: null
   }
 ])
-
+const quizStart = ref(false)
 const quizCompleted = ref(false)
 const currentQuestion = ref(0)
 const score = computed(() => {
@@ -77,13 +77,21 @@ const NextQuestion = () => {
 	quizCompleted.value = true
 
 }
+
+const StartTrivia = () => {
+	quizStart.value = true
+}
 </script>
 
 <template>
 	<main class="app">
 		<h1>Cultura ambiental: Basura</h1>
-		
-		<section class="quiz" v-if="!quizCompleted">
+		<section v-if="!quizStart && !quizCompleted" class="start-section">
+			<button @click="StartTrivia" class="start-butt">
+				Empezar Trivia
+			</button>
+		</section>
+		<section class="quiz" v-if="!quizCompleted && quizStart">
 			<div class="quiz-info">
 				<span class="question">{{ getCurrentQuestion.question }}</span>
 				<span class="score">Puntos {{ score }}/{{ questions.length }}</span>
@@ -131,7 +139,7 @@ const NextQuestion = () => {
 			</button>
 		</section>
 
-		<section v-else>
+		<section v-if="quizStart && quizCompleted">
 			<h2>¡Terminó la trivia!</h2>
 			<p>Tu puntaje: {{ score }}/{{ questions.length }}</p>
 		</section>
@@ -149,7 +157,7 @@ const NextQuestion = () => {
 body {
 	background-image: url('./assets/contam.gif'); 
     background-repeat: repeat;
-	color: #fff;
+	color: #f1f1f1;
 }
 
 .app {
@@ -185,7 +193,7 @@ h1 {
 }
 
 .quiz-info.score {
-	color: #FFF;
+	color: #f1f1f1;
 	font-size: 1.25rem;
 }
 
@@ -233,11 +241,37 @@ button {
 	cursor: pointer;
 	padding: 0.5rem 1rem;
 	background-color: #013c28;
-	color: #000000;
+	color: #1f1f1f;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 1.2rem;
 	border-radius: 0.5rem;
+}
+
+.start-section{
+	height: 50vh;
+	width: 50vw;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.start-butt{
+	appearance: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	background-color: #0a013c;
+	color: #f1f1f1;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	border-radius: 0.5rem;
+	width: 50vw;
+	height: 10vh;
 }
 
 button:disabled {
@@ -252,8 +286,9 @@ h2 {
 }
 
 p {
-	color: #000000;
+	color: #1f1f1f;
 	font-size: 1.5rem;
 	text-align: center;
 }
 </style>
+
