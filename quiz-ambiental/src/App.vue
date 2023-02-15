@@ -158,8 +158,8 @@ body {
 	background-image: url('./assets/TRIVIA_2-01.png'); 
     background-repeat: no-repeat;
 	height: 100%;
-	backgroundPosition: center;
-	backgroundSize: cover;
+	background-position: center;
+	background-size: cover;
 }
 
 .app {
