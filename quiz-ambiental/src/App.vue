@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import imgUrl from './assets/TRIVIA_2-01.png'
+import imgUrl from './assets/basura.png'
 
 const questions = ref([
   {
@@ -155,9 +155,11 @@ const StartTrivia = () => {
 }
 
 body {
-	background-image: url('./assets/contam.gif'); 
-    background-repeat: repeat;
-	color: #f1f1f1;
+	background-image: url('./assets/TRIVIA_2-01.png'); 
+    background-repeat: no-repeat;
+	height: 100%;
+	backgroundPosition: center;
+	backgroundSize: cover;
 }
 
 .app {
